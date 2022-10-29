@@ -6,5 +6,17 @@
     "background_color":"#FFFFFF",
     "theme_color":"black",
     "scope": ".",
-    "description":"Small PWA Template"
+    "description":"Small PWA Template",
+    "icons":[
+        {
+        "src":"images/icon192x192.png",                     
+        "sizes":"192x192",
+        "type":"image/png"
+        },
+        {
+        "src":"images/icon512x512.png",
+        "sizes":"512x512",
+        "type":"image/png"
+        }
+   ]
 }
