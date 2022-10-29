@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
- 
-  <!-- Responsive -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
- 
-  <title>PWATemplate/title>
- 
   <meta name= "apple-mobile-web-app-status-bar" content="#aa7700">
   <meta name="theme-color" content="black">
   <link rel="manifest" href="manifest.json">
+ 
+  <title>PWATemplate/title>
 </head>
  
 <body>
   <h1>Content</h1>
 </body>
+ 
+<script>
+    window.addEventListener('load', () => {
+      registerSW();
+    });
+
+    async function registerSW() {
+      if ('serviceWorker' in navigator) {
+        try {
+          await navigator
+                .serviceWorker
+                .register('serviceworker.js');
+        }
+        catch (e) {
+          console.log('SW registration failed');
+        }
+      }
+    }
+ </script>
 </html>
