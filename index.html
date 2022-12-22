@@ -1,36 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name= "apple-mobile-web-app-status-bar" content="#aa7700">
-  <meta name="theme-color" content="black">
-  <link rel="manifest" href="manifest.json">
- 
-  <title>PWATemplate</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <titlePWATemplate</title>
+  <link rel="canonical" href="https://blune.github.io/PwaTemplate/" />
+  <link rel="manifest" href="/PwaTemplate/manifest.json">
 </head>
- 
 <body>
-  <h1>Content</h1>
-</body>
- 
-<script>
-    window.addEventListener('load', () => {
-      registerSW();
-    });
-
-    async function registerSW() {
-      if ('serviceWorker' in navigator) {
-        try {
-          await navigator
-                .serviceWorker
-                .register('serviceworker.js');
-        }
-        catch (e) {
-          console.log('SW registration failed');
-        }
+  <h1>GitHub page as PWA template</h1>
+    …
+  <script>
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register (
+          '/PwaTemplate/sw.js',
+          {scope: '/PwaTemplate/'}
+        )
       }
-    }
- </script>
+  </script>
+</body>
 </html>
