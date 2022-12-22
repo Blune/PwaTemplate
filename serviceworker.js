@@ -1,18 +1,27 @@
 
 var staticCacheName = "pwa";
+var GHPATH = '/PwaTemplate';
+var URLS = [    
+  `${GHPATH}/`,
+  `${GHPATH}/index.html`,
+  `${GHPATH}/img/icon.png`,
+]
  
-self.addEventListener("install", function (e) {
+self.addEventListener('install', function (e) {
   e.waitUntil(
-    caches.open(staticCacheName);
-  );
-});
- 
-self.addEventListener("fetch", function (event) {
-  console.log(event.request.url);
- 
-  event.respondWith(
-    caches.match(event.request).then(function (response) {
-      return response || fetch(event.request);
+    caches.open(staticCacheName).then(function (cache) {
+      return cache.addAll(URLS)
     })
-  );
-});
+  )
+})
+ 
+self.addEventListener('fetch', function (e) {
+    caches.match(e.request).then(function (request) {
+      if (request) { 
+        return request
+      } else {       
+        return fetch(e.request)
+      }
+    })
+  )
+})
