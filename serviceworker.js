@@ -3,8 +3,7 @@ var staticCacheName = "pwa";
 var GHPATH = '/PwaTemplate';
 var URLS = [    
   `${GHPATH}/`,
-  `${GHPATH}/index.html`,
-  `${GHPATH}/img/icon.png`,
+  `${GHPATH}/index.html`
 ]
  
 self.addEventListener('install', function (e) {
